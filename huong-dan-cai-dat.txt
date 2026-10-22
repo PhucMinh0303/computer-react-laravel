@@ -1,0 +1,35 @@
+
+// Frontend:
+
+npm create vite@latest frontend -- --template react-ts
+
+ESLint - linter to use
+
+cd frontend
+
+npm install
+
+npm install -D @types/react@^19 @types/react-dom@^19
+
+npm install axios
+
+npm run dev
+
+// Backend
+
+composer create-project laravel/laravel:^12.0 backend
+
+php artisan key:generate
+
+php artisan migrate
+php artisan serve
+
+php artisan install:api
+php artisan config:publish cors
+
+// Chạy dự án 
+# Terminal 1
+cd backend && php artisan serve
+
+# Terminal 2
+cd frontend && npm run dev
