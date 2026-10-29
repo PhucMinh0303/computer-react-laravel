@@ -1,0 +1,115 @@
+frontend/
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── image/
+│   │       ├── logo/
+│   │       │   ├── apple_while_images.png
+│   │       │   ├── APR_logo.png
+│   │       │   └── logo_topzone.png
+│   │       ├── main/
+│   │       │   └── 8396644e4168a90a487b66cb5d38de17.png
+│   │       ├── product-type/
+│   │       │   ├── IP_Desk_26.png
+│   │       │   ├── Ipad_Desk_25.png
+│   │       │   ├── Mac_Desk_25.png
+│   │       │   ├── Phukien_Desk_25.png
+│   │       │   ├── Speaker_Desk_25.png
+│   │       │   └── Watch_Desk_26.png
+│   │       └── TekZone/
+│   │           ├── code-cach-nhap-code-survive-homelander-thumb639165276956424368.png
+│   │           ├── code-fc-mobile-thumb639117776092956774.png
+│   │           └── thumbnail639226436759817073.png
+│   ├── components/
+│   │   ├── header&footer/
+│   │   │   ├── Footer.css
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Header.css
+│   │   │   ├── Header.tsx
+│   │   │   └── MainLayout.tsx
+│   │   ├── HeroSlider/
+│   │   │   ├── HeroSlider.css
+│   │   │   └── HeroSlider.tsx
+│   │   ├── ProductShowcase/
+│   │   │   ├── ProductShowcase.css
+│   │   │   └── ProductShowcase.tsx
+│   │   └── TekZone/
+│   │       ├── NewsCard.tsx
+│   │       ├── TekZone.css
+│   │       └── TekZone.tsx
+│   ├── pages/
+│   │   ├── AccessoryPage/
+│   │   │   ├── AccessoryPage.css
+│   │   │   └── AccessoryPage.tsx
+│   │   ├── AirPodsPage/
+│   │   │   ├── AirPodsPage.css
+│   │   │   └── AirPodsPage.tsx
+│   │   ├── iPadPage/
+│   │   │   ├── iPadPage.css
+│   │   │   └── iPadPage.tsx
+│   │   ├── iPhonePage/
+│   │   │   ├── iPhonePage.css
+│   │   │   └── iPhonePage.tsx
+│   │   ├── MacPage/
+│   │   │   ├── MacPage.css
+│   │   │   └── MacPage.tsx
+│   │   ├── TekZonePage/
+│   │   │   ├── TekZonePage.css
+│   │   │   └── TekZonePage.tsx
+│   │   ├── TopCarePage/
+│   │   │   ├── TopCarePage.css
+│   │   │   └── TopCarePage.tsx
+│   │   └── WatchPage/
+│   │       ├── WatchPage.css
+│   │       └── WatchPage.tsx
+│   ├── types/
+│   │   └── news.ts
+│   ├── api.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── productApi.ts
+├── .env
+├── .env.example
+├── .gitignore
+├── eslint.config.js
+├── folder-tree.txt
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+
+
+
+/*Ví dụ App.tsx*/
+import React from 'react';
+import Header from './components/header&footer/Header';
+import HeroSlider from './components/HeroSlider/HeroSlider';
+import Footer from './components/header&footer/Footer';
+import ProductShowcase from './components/ProductShowcase/ProductShowcase';
+import TekZone from './components/TekZone/TekZone';
+
+function App() {
+  return (
+    <div className="App">
+        <Header />
+        
+        <main>
+          
+          <HeroSlider />
+          <ProductShowcase />
+          <TekZone />
+        </main>
+        <Footer />  
+      </div>
+    
+  );
+}
+
+export default App;
