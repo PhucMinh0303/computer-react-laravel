@@ -18,6 +18,7 @@ import AirPodsPage from './pages/AirPodsPage/AirPodsPage';
 import AccessoryPage from './pages/AccessoryPage/AccessoryPage';
 import TekZonePage from './pages/TekZonePage/TekZonePage';
 import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage';
+import CartPage from './pages/CartPage/CartPage';
 
 
 const HomePage: React.FC = () => (
@@ -46,6 +47,7 @@ const App: React.FC = () => {
         <Route path="/phu-kien" element={<AccessoryPage />} />
         <Route path="/tekzone" element={<TekZonePage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
+        <Route path="/cart" element={<CartPage />} />
 
         {/* 404 - fallback */}
         <Route path="*" element={<div>404 - Không tìm thấy trang</div>} />

@@ -1,9 +1,10 @@
 // src/components/header&footer/Header.tsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import LOGO_IMAGE_URL from '../../assets/image/logo/logo_topzone.png';
 import APPLE_ICON_URL from '../../assets/image/logo/APR_logo.png';
+import { CART_STORAGE_KEY, CART_UPDATED_EVENT, getCartItems } from '../../cart';
 
 const SearchIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -18,6 +19,26 @@ const CartIcon = () => (
 );
 
 const Header: React.FC = () => {
+  const [cartCount, setCartCount] = useState(
+    () => getCartItems().reduce((total, item) => total + item.quantity, 0),
+  );
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      setCartCount(getCartItems().reduce((total, item) => total + item.quantity, 0));
+    };
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === CART_STORAGE_KEY) updateCartCount();
+    };
+
+    window.addEventListener(CART_UPDATED_EVENT, updateCartCount);
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      window.removeEventListener(CART_UPDATED_EVENT, updateCartCount);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, []);
+
   return (
     <header className="header">
       <div className="header-container">
@@ -45,7 +66,14 @@ const Header: React.FC = () => {
 
         <div className="header-actions">
           <div className="icon-btn"><SearchIcon /></div>
-          <div className="icon-btn"><CartIcon /></div>
+          <Link to="/cart" className="icon-btn" aria-label="Giỏ hàng" title="Giỏ hàng">
+            <CartIcon />
+            {cartCount > 0 && (
+              <span className="cart-count" aria-label={`${cartCount} sản phẩm trong giỏ hàng`}>
+                {cartCount > 99 ? '99+' : cartCount}
+              </span>
+            )}
+          </Link>
         </div>
       </div>
     </header>

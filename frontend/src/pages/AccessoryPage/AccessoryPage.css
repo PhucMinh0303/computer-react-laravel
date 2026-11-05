@@ -76,16 +76,10 @@
 
 .iphone-page-container .filter-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 7px;
   margin-bottom: 15px;
-  overflow-x: auto;
   padding-bottom: 1px;
-  scrollbar-width: none;
-}
-
-.iphone-page-container .filter-section::-webkit-scrollbar {
-  display: none;
 }
 
 .iphone-page-container .filter-btn,
@@ -109,7 +103,10 @@
 
 .iphone-page-container .filter-tabs {
   display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
   gap: 6px;
+  min-width: 0;
 }
 
 .iphone-page-container .tab-btn {

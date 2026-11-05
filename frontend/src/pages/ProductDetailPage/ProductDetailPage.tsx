@@ -1,6 +1,6 @@
 ﻿
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import {
   ChevronDown,
   ChevronLeft,
@@ -15,6 +15,7 @@ import {
   Watch,
 } from 'lucide-react';
 import './ProductDetailPage.css';
+import { addCartItem } from '../../cart';
 
 const galleryImages = [
   {
@@ -129,6 +130,7 @@ interface ProductDetailRouteState {
 
 const ProductDetailPage = () => {
   const { state } = useLocation();
+  const { id } = useParams();
   const product = state as ProductDetailRouteState | null;
   const productGallery = [
     { ...galleryImages[0], src: product?.image ?? galleryImages[0].src },
@@ -150,6 +152,18 @@ const ProductDetailPage = () => {
       ? `${productName} ${selectedStorage}`
       : productName
     : `${productName} 256GB`;
+  const productPrice = Number((product?.price ?? '41.990.000đ').replace(/\D/g, ''));
+
+  const handleBuyNow = () => {
+    addCartItem({
+      id: `${id ?? 'product'}-${selectedStorage}-${selectedColor}`,
+      name: productName,
+      price: productPrice,
+      image: product?.image ?? galleryImages[0].src,
+      variant: `${selectedStorage} - ${selectedColor}`,
+      quantity: 1,
+    });
+  };
 
   return (
     <main className="product-detail-page">
@@ -302,7 +316,7 @@ const ProductDetailPage = () => {
           </section>
 
           <div className="purchase-actions">
-            <button className="buy-now-button" type="button">Mua ngay</button>
+            <button className="buy-now-button" type="button" onClick={handleBuyNow}>Mua ngay</button>
             <button className="installment-button" type="button">
               <strong>Mua trả chậm 0% ›</strong>
               <span>Qua thẻ tín dụng, thẻ tài chính, mua trước trả sau</span>

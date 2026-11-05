@@ -42,13 +42,13 @@ const IPhonePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState("iPhone 18 Series");
 
   const tabs = [
-    "iWatch 18 Series", "iPhone Duo", "iPhone 17 Series", 
-    "iPhone Air Series", "iPhone 16 Series", "iPhone 15 Series"
+    "Apple Watch Series 12", "Apple Watch Series 11", "Apple Watch Ultra 4", 
+    "Apple Watch Ultra 3", "Apple Watch SE 3", "Apple Watch Series 10"
   ];
 
   return (
     <div className="iphone-page-container">
-      <h3>iWatch</h3>
+      <h3>Watch</h3>
       {/* 1. Banner Section */}
       
       <div className="banner-section">

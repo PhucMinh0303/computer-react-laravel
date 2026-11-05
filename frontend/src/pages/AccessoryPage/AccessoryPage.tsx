@@ -39,11 +39,14 @@ const PRODUCTS = [
 ];
 
 const IPhonePage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("iPhone 18 Series");
+  const [activeTab, setActiveTab] = useState("Tất cả");
 
   const tabs = [
-    "Phụ kiện", "iPhone Duo", "iPhone 17 Series", 
-    "iPhone Air Series", "iPhone 16 Series", "iPhone 15 Series"
+    "Tất cả", "Phụ kiện iPhone", "Phụ kiện Mac", "Phụ kiện iPad",
+    "Phụ kiện Apple Watch", "Sạc dự phòng", "Bàn phím", "Adapter sạc",
+    "Cáp sạc", "Hub, cáp chuyển đổi", "Ốp lưng, ví da iPhone", "Ốp lưng iPad",
+    "Chuột máy tính", "Bút tablet", "Airtag", "Apple TV", "Túi đựng AirPods",
+    "Balo, túi chống sốc", "Dây/Ốp Apple Watch", "Phụ kiện công nghệ", "Phụ kiện bảo vệ"
   ];
 
   return (
