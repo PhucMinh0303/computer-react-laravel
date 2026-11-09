@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     @include('admin.menu.head-root-admin')
-    @vite(['resources/css/app.css', 'resources/css/admin/dashboard.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/admin/dashboard.css', 'resources/css/admin/products.css', 'resources/js/app.js'])
     @stack('styles')
     @vite('resources/css/admin/menu.css')
 </head>

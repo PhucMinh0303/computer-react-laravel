@@ -6,7 +6,7 @@
         </svg>
         <input type="search" name="q" placeholder="Search products..." aria-label="Search products">
     </form>
-    <a href="#" class="create-button">
+    <a href="{{ route('admin.create-product') }}" class="create-button">
         <span aria-hidden="true">+</span>
         Add Product
     </a>

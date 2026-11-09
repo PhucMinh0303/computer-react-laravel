@@ -14,7 +14,7 @@
 
 <dialog class="video-modal" id="add-video-modal" aria-labelledby="video-modal-title">
     <form class="video-modal-form" id="add-video-form">
-        <div class="video-modal-heading">
+        <div class="video-modal-heading">   
             <h2 id="video-modal-title">ADD NEW VIDEO</h2>
             <button class="video-modal-close" type="button" data-close-video-modal aria-label="Close dialog">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
